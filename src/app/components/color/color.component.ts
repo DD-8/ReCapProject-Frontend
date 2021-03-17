@@ -8,7 +8,6 @@ import { ColorService } from 'src/app/services/color/color.service';
   styleUrls: ['./color.component.css']
 })
 export class ColorComponent implements OnInit {
-  
   colors: Color[] = [];
   dataLoaded = false;
 

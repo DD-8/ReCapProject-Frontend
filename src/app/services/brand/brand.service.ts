@@ -7,7 +7,6 @@ import { BrandResponseModel } from 'src/app/models/brand/brandResponseModel';
   providedIn: 'root'
 })
 export class BrandService {
-
   apiUrl = 'https://localhost:44330/api/brands/get-all';
 
   constructor(private httpClient: HttpClient) { }
