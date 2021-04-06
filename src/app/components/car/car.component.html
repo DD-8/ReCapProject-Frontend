@@ -22,7 +22,7 @@
     </tr>
   </thead>
   <tr *ngFor="let car of cars">
-    <td>{{ car.carId }}</td>
+    <td>{{ car.id }}</td>
     <td>{{ car.brandName }}</td>
     <td>{{ car.modelName }}</td>
     <td>{{ car.colorName }}</td>
@@ -33,5 +33,10 @@
     <td>{{ car.description }}</td>
     <td>{{ car.transmissionTypeName }}</td>
     <td>{{ car.bodyTypeName }}</td>
+    <td>
+      <a  class="btn btn-primary"
+          routerLink="/cars/{{car.id}}">Detay
+      </a>
+  </td>
   </tr>
 </table>
