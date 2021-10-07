@@ -15,7 +15,7 @@ export class CarDetailsComponent implements OnInit {
   staticFilesUrl: "https://localhost:44363/";
 
   carImages!: CarImage[];
-  cars: Car;
+  cars: Car[];
   dataLoaded: boolean = false;
 
   constructor(private carImageService: CarImageService, private carService: CarService, private activatedRoute: ActivatedRoute) { }
