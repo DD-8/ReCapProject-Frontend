@@ -15,7 +15,7 @@ export class CarDetailsComponent implements OnInit {
   staticFilesUrl: "https://localhost:44363/";
 
   carImages!: CarImage[];
-  cars: Car[];
+  car: Car;
   dataLoaded: boolean = false;
 
   constructor(private carImageService: CarImageService, private carService: CarService, private activatedRoute: ActivatedRoute) { }
@@ -29,7 +29,7 @@ export class CarDetailsComponent implements OnInit {
 
   getCarDetailById(carId:number) {
     this.carService.getCarDetailById(carId).subscribe(response => {
-      this.cars = response.data;
+      this.car = response.data;
       this.dataLoaded = response.success;
     })
   }

@@ -1,14 +1,14 @@
-<div
-  *ngIf="dataLoaded == false"
-  class="spinner-border text-primary"
-  role="status"
->
+<div *ngIf="dataLoaded == false" class="spinner-border text-primary" role="status">
   <span class="visually-hidden">Loading...</span>
+</div>
+<div class="mb-3">
+  <label for="filterText" class="form-label">Ürün Ara</label>
+  <input type="text" [(ngModel)]="filterText" class="form-control" id="filerText" placeholder="Arama İfadesi Giriniz">
 </div>
 <table *ngIf="dataLoaded != false" class="table">
   <thead>
     <tr>
-      <th>Id</th>
+      <th >Id</th>
       <th>Marka</th>
       <th>Model</th>
       <th>Renk</th>
@@ -19,9 +19,11 @@
       <th>Açıklama</th>
       <th>Vites Türü</th>
       <th>Kasa Türü</th>
+      <th>Açıklama</th>
+      <th></th>
     </tr>
   </thead>
-  <tr *ngFor="let car of cars">
+  <tr *ngFor="let car of cars | filterPipe: filterText">
     <td>{{ car.id }}</td>
     <td>{{ car.brandName }}</td>
     <td>{{ car.modelName }}</td>
@@ -33,10 +35,9 @@
     <td>{{ car.description }}</td>
     <td>{{ car.transmissionTypeName }}</td>
     <td>{{ car.bodyTypeName }}</td>
+    <td>{{ car.description }}</td>
     <td>
-      <a  class="btn btn-primary"
-          routerLink="/cars/{{car.id}}">Detay
-      </a>
-  </td>
+      <button class="btn btn-outline-success" type="submit" routerLink="/cars/{{car.id}}">Detay</button>
+    </td>
   </tr>
 </table>

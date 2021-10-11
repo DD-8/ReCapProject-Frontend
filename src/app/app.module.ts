@@ -13,6 +13,10 @@ import { CarComponent } from './components/car/car.component';
 import { RentalComponent } from './components/rental/rental.component';
 import { CarDetailsComponent } from './components/car-details/car-details.component';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { ToastrModule } from 'ngx-toastr';
+import { LoginComponent } from './components/login/login.component';
+import { FilterPipePipe } from 'src/pipes/filter-pipe.pipe';
+import { VatAddedPipe } from 'src/pipes/vat-added.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,10 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     UserComponent,
     CarComponent,
     RentalComponent,
-    CarDetailsComponent
+    CarDetailsComponent,
+    LoginComponent,
+    VatAddedPipe,
+    FilterPipePipe,
   ],
   imports: [
     BrowserModule,
